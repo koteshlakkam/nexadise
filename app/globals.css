@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #f8fafc;
+  background: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nextjs-portal {
+  display: none !important;
+}
+
+@keyframes sentenceFade {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  28% {
+    opacity: 1;
+  }
+  36%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulseLine {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.email-flow-line {
+  animation: pulseLine 1.8s ease-in-out infinite;
+}
+
+.email-flow-item {
+  animation: sentenceFade 9s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes handoff {
+  0% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+  10%,
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(220px);
+    opacity: 0;
+  }
+}
+
+@keyframes completePulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.human-bob {
+  animation: bob 3.2s ease-in-out infinite;
+}
+
+.handoff-message {
+  animation: handoff 4.2s ease-in-out infinite;
+}
+
+.action-complete {
+  animation: completePulse 2.8s ease-in-out infinite;
+}
