@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { GmailRow } from "@/components/features/gmail/GmailRow";
 import {
   GmailFiltersBar,
@@ -18,7 +19,29 @@ import { useGmailSync } from "@/hooks/useGmailSync";
 const PAGE_SIZE = 20;
 
 export default function InboxPage() {
-  const [filters, setFilters] = useState<FilterState>(INITIAL_FILTERS);
+  return (
+    <Suspense fallback={<div className="h-10" />}>
+      <InboxPageInner />
+    </Suspense>
+  );
+}
+
+function InboxPageInner() {
+  const searchParams = useSearchParams();
+  const initialQ = searchParams?.get("q") ?? "";
+
+  const [filters, setFilters] = useState<FilterState>(() =>
+    initialQ ? { ...INITIAL_FILTERS, q: initialQ } : INITIAL_FILTERS,
+  );
+
+  // Keep filter `q` in sync with URL when user navigates here from the global search
+  useEffect(() => {
+    const urlQ = searchParams?.get("q") ?? "";
+    if (urlQ && urlQ !== filters.q) {
+      setFilters((f) => ({ ...f, q: urlQ }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const apiFilters = useMemo(() => toApiFilters(filters), [filters]);
 
