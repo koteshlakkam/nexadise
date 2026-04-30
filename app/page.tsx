@@ -82,6 +82,7 @@ export default function HomePage() {
 									height={100}
 									className="h-11 w-auto"
 								/>
+								<span className="text-sm font-medium tracking-tightish text-ink-900">nexadise</span>
 							</Link>
 
 							<nav className="hidden items-center gap-7 md:flex">
@@ -495,6 +496,7 @@ export default function HomePage() {
 								height={100}
 								className="h-fit w-12"
 							/>
+							<span className="text-sm font-medium tracking-tightish text-ink-900">nexadise</span>
 							<span className="ml-2 text-2xs text-ink-400">
 								© {new Date().getFullYear()}
 							</span>
