@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { InboxTransformationSection } from "@/components/features/landing/InboxTransformationSection";
+import Image from "next/image";
 
 const FEATURES = [
 	{
@@ -74,10 +75,13 @@ export default function HomePage() {
 					<Container size="xl">
 						<div className="flex h-16 items-center justify-between">
 							<Link href="/" className="flex items-center gap-2">
-								<Icon.Logo className="h-7 w-7" />
-								<span className="text-base font-semibold tracking-tightish text-ink-900">
-									nexadise
-								</span>
+								<Image
+									src="/logo.png"
+									alt="nexadise"
+									width={100}
+									height={100}
+									className="h-11 w-auto"
+								/>
 							</Link>
 
 							<nav className="hidden items-center gap-7 md:flex">
@@ -104,9 +108,9 @@ export default function HomePage() {
 							<div className="flex items-center gap-2">
 								{status === "authenticated" ? (
 									<>
-										<span className="hidden text-xs text-ink-500 sm:inline">
+										{/* <span className="hidden text-xs text-ink-500 sm:inline">
 											{session.user?.email}
-										</span>
+										</span> */}
 										<Link href="/dashboard">
 											<Button
 												size="sm"
@@ -123,7 +127,7 @@ export default function HomePage() {
 											variant="ghost"
 											onClick={() => signOut()}
 										>
-											Sign out
+											<Icon.Logout className="h-4 w-4 mr-2 text-red-500" />
 										</Button>
 									</>
 								) : (
@@ -268,8 +272,8 @@ export default function HomePage() {
 						className="relative mx-auto mt-16 max-w-5xl"
 					>
 						<div className="absolute -inset-12 -z-10 rounded-[40px] bg-gradient-to-br from-brand-200/40 via-violet-200/30 to-transparent blur-3xl" />
-							<div className="rounded-xl border border-ink-200 bg-white p-6">
-								<InboxTransformationSection />
+						<div className="rounded-xl border border-ink-200 bg-white p-6">
+							<InboxTransformationSection />
 						</div>
 					</motion.div>
 				</Container>
@@ -484,10 +488,13 @@ export default function HomePage() {
 				<Container size="xl">
 					<div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
 						<div className="flex items-center gap-2">
-							<Icon.Logo className="h-5 w-5" />
-							<span className="text-sm font-medium text-ink-900">
-								nexadise
-							</span>
+							<Image
+								src="/logo.png"
+								alt="nexadise"
+								width={100}
+								height={100}
+								className="h-fit w-12"
+							/>
 							<span className="ml-2 text-2xs text-ink-400">
 								© {new Date().getFullYear()}
 							</span>

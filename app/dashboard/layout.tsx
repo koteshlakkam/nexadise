@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
+import { GlobalSearch } from "@/components/features/search/GlobalSearch";
 import { cn } from "@/lib/cn";
 
 const NAV_PRIMARY = [
@@ -76,14 +77,7 @@ export default function DashboardLayout({
 					</div>
 
 					<div className="hidden flex-1 items-center justify-center md:flex">
-						<div className="relative w-full max-w-md">
-							<Icon.Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-ink-400" />
-							<input
-								type="search"
-								placeholder="Search emails, tasks, people…"
-								className="h-9 w-full rounded-lg border border-ink-200 bg-white pl-9 pr-3 text-sm text-ink-900 placeholder:text-ink-400 focus:border-brand-300 focus:outline-none focus:ring-2 focus:ring-brand-200/60"
-							/>
-						</div>
+						<GlobalSearch />
 					</div>
 
 					<div className="flex items-center gap-2">
