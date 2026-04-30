@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { GlobalSearch } from "@/components/features/search/GlobalSearch";
 import { cn } from "@/lib/cn";
+import Image from "next/image";
 
 const NAV_PRIMARY = [
 	{
@@ -65,10 +66,7 @@ export default function DashboardLayout({
 				<div className="flex h-14 items-center justify-between gap-3 px-4 sm:px-6">
 					<div className="flex items-center gap-2">
 						<Link href="/" className="flex items-center gap-2">
-							<Icon.Logo className="h-7 w-7" />
-							<span className="hidden text-sm font-semibold tracking-tightish text-ink-900 sm:inline">
-								nexadise
-							</span>
+							<Image src="/logo.png" alt="nexadise" width={100} height={100} className="h-11 w-auto" />
 						</Link>
 						<span className="mx-1 hidden h-4 w-px bg-ink-200 sm:block" />
 						<span className="hidden rounded-md bg-ink-100 px-2 py-0.5 text-2xs font-medium text-ink-600 sm:inline">
