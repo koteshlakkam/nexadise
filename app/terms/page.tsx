@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
+import Image from "next/image";
 
 export default function TermsPage() {
 	return (
@@ -19,8 +20,14 @@ export default function TermsPage() {
 					<Container size="xl">
 						<div className="flex h-16 items-center justify-between">
 							<Link href="/" className="flex items-center gap-2">
-								<Icon.Logo className="h-7 w-7" />
-								<span className="text-base font-semibold tracking-tightish text-ink-900">
+								<Image
+									src="/logo.png"
+									alt="nexadise"
+									width={100}
+									height={100}
+									className="h-11 w-auto"
+								/>
+								<span className="text-sm font-medium tracking-tightish text-ink-900">
 									nexadise
 								</span>
 							</Link>
@@ -256,7 +263,13 @@ export default function TermsPage() {
 				<Container size="xl">
 					<div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
 						<div className="flex items-center gap-2">
-							<Icon.Logo className="h-5 w-5" />
+							<Image
+								src="/logo.png"
+								alt="nexadise"
+								width={100}
+								height={100}
+								className="h-11 w-auto"
+							/>
 							<span className="text-sm font-medium text-ink-900">
 								nexadise
 							</span>

@@ -65,8 +65,8 @@ export default function DashboardLayout({
 			<header className="sticky top-0 z-30 border-b border-ink-100 bg-white/80 backdrop-blur">
 				<div className="flex h-14 items-center justify-between gap-3 px-4 sm:px-6">
 					<div className="flex items-center gap-2">
-						<Link href="/" className="flex items-center gap-2">
-							<Image src="/logo.png" alt="nexadise" width={100} height={100} className="h-11 w-auto" />
+						<Link href="/" className="flex items-center gap-2.5">
+							<Image src="/logo.png" alt="nexadise" width={100} height={100} className="h-11 w-auto" /> <span className="text-sm font-medium tracking-tightish text-ink-900">nexadise</span>
 						</Link>
 						<span className="mx-1 hidden h-4 w-px bg-ink-200 sm:block" />
 						<span className="hidden rounded-md bg-ink-100 px-2 py-0.5 text-2xs font-medium text-ink-600 sm:inline">
